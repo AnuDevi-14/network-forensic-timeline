@@ -50,6 +50,38 @@ This repo contains the Input and Processing/Analysis layers. The other layers we
 
 
 
+\## ML Comparison (classifier\_comparison.py)
+
+A random forest (100 trees) was trained on the same friday.csv to compare against the rule-based detection. Run in Google Colab.
+
+
+
+| | Rules | Random forest |
+
+|---|---|---|
+
+| Attack recall | \~98% | 99.99% (70/30 random split) |
+
+| Benign flows wrongly flagged | 79,349 | 3 (on the 30% test split) |
+
+
+
+Rules were evaluated on the full file and the forest on a 30% test split, so the numbers are not directly equal.
+
+IP addresses and ports were removed as features, which barely changed the result.
+
+
+
+Unseen-attack test: trained on Portscan + benign, tested on DDoS + benign.
+
+DDoS recall 0.92, precision 1.00. The model generalizes to a new attack type but misses about 8%.
+
+
+
+Limitations: CIC-IDS-2017 attacks are very distinct from normal traffic, and flows from the same attack are near-copies, so random-split scores are optimistic. Results may be lower on other datasets.
+
+
+
 \## How to run
 
 python data\_loader.py
