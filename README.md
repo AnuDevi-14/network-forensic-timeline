@@ -46,7 +46,7 @@ Note: the Timestamp column in this file is damaged, so event order is based on r
 
 Five layers: Input, Processing and Analysis, Storage (PostgreSQL), API (FastAPI), Presentation (React dashboard with PDF/CSV report).
 
-This repo contains the Input and Processing/Analysis layers. The other layers were built by teammates: \[Swetha,Shanmadhi,].
+This repo contains the Input and Processing/Analysis layers. The other layers were built by teammates: \[Swetha,Shanmadhi,Agastiya].
 
 
 
